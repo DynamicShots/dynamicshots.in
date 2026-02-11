@@ -1,65 +1,119 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="noise-overlay gradient-bg relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6">
+      {/* Background decorative elements */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Soft radial glow */}
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.02] blur-3xl" />
+        {/* Corner accents */}
+        <div className="absolute -left-32 -top-32 h-64 w-64 rounded-full bg-blue-500/[0.05] blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 h-64 w-64 rounded-full bg-indigo-500/[0.05] blur-3xl" />
+        {/* Grid lines */}
+        <div className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "100px 100px",
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+      </div>
+
+      {/* Main content */}
+      <main className="relative z-10 flex flex-col items-center gap-8 text-center">
+        {/* Aperture icon */}
+        <div className="animate-shutter">
+          <div className="aperture-ring flex items-center justify-center">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="rgba(255,255,255,0.5)"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="14.31" y1="8" x2="20.05" y2="17.94" />
+              <line x1="9.69" y1="8" x2="21.17" y2="8" />
+              <line x1="7.38" y1="12" x2="13.12" y2="2.06" />
+              <line x1="9.69" y1="16" x2="3.95" y2="6.06" />
+              <line x1="14.31" y1="16" x2="2.83" y2="16" />
+              <line x1="16.62" y1="12" x2="10.88" y2="21.94" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Brand name */}
+        <div className="animate-fade-in-up">
+          <h1 className="font-sans text-5xl font-bold tracking-tight text-white sm:text-7xl">
+            Dynamic
+            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              Shots
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        </div>
+
+        {/* Tagline */}
+        <p className="animate-fade-in-up-delay-1 max-w-md font-sans text-lg text-zinc-400 sm:text-xl">
+          Capturing life in motion
+        </p>
+
+        {/* Divider */}
+        <div className="animate-fade-in-up-delay-2 flex items-center gap-4">
+          <div className="h-px w-16 bg-gradient-to-r from-transparent to-zinc-600" />
+          <div className="h-1.5 w-1.5 rounded-full bg-zinc-500 animate-pulse-glow" />
+          <div className="h-px w-16 bg-gradient-to-l from-transparent to-zinc-600" />
+        </div>
+
+        {/* Under development message */}
+        <div className="animate-fade-in-up-delay-3 flex flex-col items-center gap-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/50 px-5 py-2.5 backdrop-blur-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
+            </span>
+            <span className="font-mono text-sm text-zinc-300">
+              Website Under Development
+            </span>
+          </div>
+          <p className="max-w-sm text-sm leading-relaxed text-zinc-500">
+            We&apos;re crafting something extraordinary. Our new photography
+            portfolio is being developed and will be live soon.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
+        {/* Contact hint */}
+        <div className="animate-fade-in-up-delay-4 mt-4">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:hello@dynamicshots.in"
+            className="group inline-flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-zinc-300"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="transition-transform group-hover:-translate-y-0.5"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            hello@dynamicshots.in
           </a>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="absolute bottom-6 z-10 text-center">
+        <p className="font-mono text-xs text-zinc-600">
+          &copy; {new Date().getFullYear()} DynamicShots. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }
