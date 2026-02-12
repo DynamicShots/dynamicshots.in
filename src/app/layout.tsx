@@ -13,29 +13,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DynamicShots | Coming Soon",
+  title: "Dynamic Shots | Cinematic Wedding Films & Photography",
   description:
-    "DynamicShots — Professional photography that captures life in motion. Our new website is under development. Stay tuned for stunning visuals and creative storytelling.",
+    "Dynamic Shots — Cinematic wedding films and emotional storytelling based in Madurai. We specialize in wedding photography, couple reels, and post-wedding highlights. Available across India.",
   keywords: [
-    "photography",
+    "wedding photography",
+    "cinematic wedding films",
+    "couple reels",
+    "wedding highlights",
+    "Madurai wedding photographer",
     "dynamic shots",
-    "professional photography",
-    "creative photography",
-    "photo studio",
+    "pre-wedding shoots",
+    "drone coverage",
+    "emotional storytelling",
   ],
   openGraph: {
-    title: "DynamicShots | Coming Soon",
+    title: "Dynamic Shots | Cinematic Wedding Films & Photography",
     description:
-      "Professional photography that captures life in motion. Website launching soon.",
+      "Cinematic wedding films and emotional storytelling. Based in Madurai, available across India.",
     url: "https://dynamicshots.in",
-    siteName: "DynamicShots",
+    siteName: "Dynamic Shots",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DynamicShots | Coming Soon",
+    title: "Dynamic Shots | Cinematic Wedding Films & Photography",
     description:
-      "Professional photography that captures life in motion. Website launching soon.",
+      "Cinematic wedding films and emotional storytelling. Based in Madurai, available across India.",
   },
   robots: {
     index: true,
