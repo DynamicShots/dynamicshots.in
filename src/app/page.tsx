@@ -106,7 +106,7 @@ export default function Home() {
       {/* Main content */}
       <main className="relative z-10 flex flex-col items-center gap-8 text-center">
         {/* Logo */}
-        <div className="animate-shutter">
+        <div className="animate-shutter" role="img" aria-label="Dynamic Shots logo">
           <Image
             src="/LOGO_Portrait_JPG_White.jpg"
             alt="Dynamic Shots Logo"
@@ -149,13 +149,15 @@ export default function Home() {
         </div>
 
         {/* Description */}
-        <p className="animate-fade-in-up-delay-2 max-w-md text-sm leading-relaxed text-zinc-500">
+        {/* <p className="animate-fade-in-up-delay-2 max-w-md text-sm leading-relaxed text-zinc-500">
           We believe every love story is unique. From grand weddings to intimate
           ceremonies, we turn your emotions into dynamic memories — with beauty,
           elegance, and soul.
-        </p>
+        </p> */}
 
         {/* Services */}
+        <section aria-label="Our Services">
+        <h2 className="sr-only">Our Services</h2>
         <div className="animate-fade-in-up-delay-3 flex flex-wrap items-center justify-center gap-2">
           {[
             "Cinematic Teasers",
@@ -172,6 +174,7 @@ export default function Home() {
             </span>
           ))}
         </div>
+        </section>
 
         {/* Under development badge */}
         <div className="animate-fade-in-up-delay-3 flex flex-col items-center gap-3">
@@ -216,7 +219,7 @@ export default function Home() {
         </div>
 
         {/* Social links */}
-        <div className="animate-fade-in-up-delay-4 mt-4 flex flex-wrap items-center justify-center gap-2.5">
+        <nav aria-label="Social media links" className="animate-fade-in-up-delay-4 mt-4 flex flex-wrap items-center justify-center gap-2.5">
           {socialLinks.map((link) => (
             <a
               key={link.name}
@@ -230,7 +233,7 @@ export default function Home() {
               <span className="text-xs">{link.name}</span>
             </a>
           ))}
-        </div>
+        </nav>
       </main>
 
       {/* Footer */}
