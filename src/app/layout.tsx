@@ -131,6 +131,7 @@ const jsonLd = {
   ],
   sameAs: [
     "https://instagram.com/dynamicshotsIN",
+    "https://www.youtube.com/@dynamicshotsIN",
     "https://facebook.com/dynamicshotsIN",
     "https://x.com/dynamicshotsin",
     "https://threads.net/@dynamicshotsin",
